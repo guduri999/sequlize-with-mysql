@@ -38,7 +38,6 @@ export const Courses = sequelizeConnection.define('Courses', {
     CourseSyllabus: {
         type: DataTypes.STRING,
         allowNull: false,
-    }
-
+    },
 })
 

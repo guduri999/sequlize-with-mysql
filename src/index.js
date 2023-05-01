@@ -1,12 +1,12 @@
-import express, { urlencoded } from "express";
+import express from "express";
 import { sequelizeConnection } from "./config/database.js";
 import { UsersTable, CoursesTable } from "./modal/index.js";
 import router from "./routes/index.js";
-import { json } from "sequelize";
 
 const app = express();
 
 app.use(express.json())
+
 const port = process.env.port || 8000;
 
 app.use(router)

@@ -4,7 +4,7 @@ import { deleteByCourseID, editCourseById, getAllCourses, getCourseById, saveCou
 const courseRouter = express.Router()
 
 courseRouter.get("/getAllCourses", getAllCourses)
-courseRouter.get('/getCourseById', getCourseById)
+courseRouter.post('/getCourseById', getCourseById)
 courseRouter.post("/saveCourse", saveCourse)
 courseRouter.post("/editCourseById", editCourseById)
 courseRouter.post('/deleteByCourseID', deleteByCourseID)

@@ -35,7 +35,7 @@ export const deleteUser = async (req, res) => {
 
     const { userId } = req.body
 
-    await UsersTable.destroy({ where: { userId: userId } }).then((data, fire) => res.status(200).json({ response: 'successfully deleted', content: data })).catch((err) => res.status(401).json({ response: 'getting error while deleting' }))
+    await UsersTable.destroy({ where: { userId: userId } }).then((data) => res.status(200).json({ response: 'successfully deleted', content: data })).catch((err) => res.status(401).json({ response: 'getting error while deleting' }))
 
 }
 

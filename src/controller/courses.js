@@ -3,12 +3,16 @@ import { CoursesTable } from "../modal/index.js";
 
 export const getAllCourses = async (req, res) => {
 
-    await CoursesTable.findAll().then((data) => res.status(200).json({ response: data })).catch((err) => res.status(401).json({ "response": "getting error", err: err }))
+    await CoursesTable.findAll()
+        .then((data) => res.status(200).json({ response: data }))
+        .catch((err) => res.status(401).json({ "response": "getting error", err: err }))
 }
 
 export const getCourseById = async (req, res) => {
 
-    await CoursesTable.findByPk(req.body.CoursesId).then((data => res.status(200).json({ response: data }))).catch((err) => res.status(401).json({ response: "getting error", err: err }))
+    await CoursesTable.findByPk(req.body.CoursesId)
+        .then((data => res.status(200).json({ response: data })))
+        .catch((err) => res.status(401).json({ response: "getting error", err: err }))
 
 }
 export const saveCourse = async (req, res) => {

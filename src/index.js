@@ -11,7 +11,9 @@ const port = process.env.port || 8000;
 
 app.use(router)
 
-sequelizeConnection.authenticate().then(console.log(`database is connected`)).catch((err) => console.log(`getting eror ${err}`))
+sequelizeConnection.authenticate()
+    .then(console.log(`database is connected`))
+    .catch((err) => console.log(`getting eror ${err}`))
 
 sequelizeConnection.sync({ force: false })
 

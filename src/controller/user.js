@@ -54,3 +54,8 @@ export const editUser = async (req, res) => {
     }).then((data) => res.status(200).json({ response: "successfully updated", data }))
         .catch((error) => res.status(401).json({ response: "getting error", error }))
 }
+
+export const userLogin = async (req, res) => {
+
+    res.status(200).json({ response: "testing" })
+}

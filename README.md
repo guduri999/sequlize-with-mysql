@@ -20,14 +20,14 @@ courses table fields
 }
 
 user table fields
-{
-"userName":"userName",
-"Password":"Password",
-"Email","Email",
-"FirstName","FirstName",
-"LastName","LastName",
-"Gender","Gender",
-"DateOFBorth","DateOFBorth",
-"Address":"Address",
-"PhoneNumber":"PhoneNumber"
-}
+ { 
+  "userName":"userName", 
+  "Password":"Password",
+ "Email":"Email",
+ "FirstName":"FirstName",
+ "LastName":"LastName",
+ "Gender":"Gender",
+ "DateOFBorth":"DateOFBorth",
+ "Address":"Address",
+ "PhoneNumber":"PhoneNumber" 
+ }

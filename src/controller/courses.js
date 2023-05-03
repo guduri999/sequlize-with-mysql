@@ -5,7 +5,7 @@ export const getAllCourses = async (req, res) => {
 
     await CoursesTable.findAll()
         .then((data) => res.status(200).json({ response: data }))
-        .catch((err) => res.status(401).json({ "response": "getting error", err: err }))
+        .catch((err) => res.status(401).json({ "response": "getting error", err: err }));
 }
 
 export const getCourseById = async (req, res) => {
@@ -17,31 +17,36 @@ export const getCourseById = async (req, res) => {
 }
 export const saveCourse = async (req, res) => {
 
-    console.clear();
-
     const { courseName } = req.body;
 
     const [data, condition] = await CoursesTable.findOrCreate({ where: { courseName }, defaults: req.body })
 
     if (!condition) {
 
-        await res.status(200).json({ response: data })
+        await res.status(200).json({ response: data });
 
     } else {
 
-        await res.status(200).json({ response: 'successfully created', data })
+        await res.status(200).json({ response: 'successfully created', data });
     }
 
 }
 
 export const editCourseById = async (req, res) => {
 
-    res.status(200).json({ result: "result", data: "record" })
+    await CoursesTable.update(
+        req.body, {
+        where: {
+            CoursesId: req.body.CoursesId
+        }
+    }
+    ).then((data) => res.status(200).json({ response: "successfully updated", data }))
+        .catch((error) => res.status(401).json({ response: "getting error", error }))
 }
 
 export const deleteByCourseID = (req, res) => {
 
     CoursesTable.destroy({ where: { CoursesId: req.body.CoursesId } })
         .then((data) => res.status(200).json({ response: `successfully deleted ${data}` }))
-        .catch((err) => res.status(401).json({ response: `getting error ${err}` }))
+        .catch((err) => res.status(401).json({ response: `getting error ${err}` }));
 }

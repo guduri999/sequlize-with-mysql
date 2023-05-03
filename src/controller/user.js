@@ -45,7 +45,12 @@ export const deleteUser = async (req, res) => {
 
 }
 
-export const editUser = (req, res) => {
+export const editUser = async (req, res) => {
 
-    res.status(200).json({ hello: 'editUser' })
+    await UsersTable.update(req.body, {
+        where: {
+            userId: req.body.userId
+        }
+    }).then((data) => res.status(200).json({ response: "successfully updated", data }))
+        .catch((error) => res.status(401).json({ response: "getting error", error }))
 }

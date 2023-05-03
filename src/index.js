@@ -5,11 +5,11 @@ import router from "./routes/index.js";
 
 const app = express();
 
-app.use(express.json())
+app.use(express.json());
 
 const port = process.env.port || 8000;
 
-app.use(router)
+app.use(router);
 
 sequelizeConnection.authenticate()
     .then(console.log(`database is connected`))

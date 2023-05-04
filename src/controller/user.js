@@ -57,5 +57,18 @@ export const editUser = async (req, res) => {
 
 export const userLogin = async (req, res) => {
 
-    res.status(200).json({ response: "testing" })
+    const value = await UsersTable.findOne({
+        where: {
+            userName: req.body.userName,
+            Password: req.body.Password
+        }
+    })
+
+    if (value === null) {
+        res.status(200).json({ response: "getting error", message: "Not a valid credentials" });
+    } else {
+        res.status(200).json({ response: "successfully login", data: value });
+    }
 }
+
+//  below function is used to created user under courses

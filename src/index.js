@@ -1,6 +1,6 @@
 import express from "express";
 import { sequelizeConnection } from "./config/database.js";
-import { UsersTable, CoursesTable } from "./modal/index.js";
+import { UsersTable, CoursesTable, userCoursesTable } from "./modal/index.js";
 import router from "./routes/index.js";
 
 const app = express();

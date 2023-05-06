@@ -1,6 +1,8 @@
 import { UsersTable } from "../modal/index.js"
 
 export const getAllUsers = async (req, res) => {
+    console.clear()
+    console.log("testing")
 
     await UsersTable.findAll()
         .then((data) => res.status(200).json({ response: data }))
@@ -70,5 +72,3 @@ export const userLogin = async (req, res) => {
         res.status(200).json({ response: "successfully login", data: value });
     }
 }
-
-//  below function is used to created user under courses

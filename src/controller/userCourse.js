@@ -1,7 +1,7 @@
 import { userCoursesTable } from "../modal/index.js";
 
 export const enrollCourse = async (req, res) => {
-
+    console.clear()
     await userCoursesTable.findOrCreate({
         where: {
             userId: req.body.userId,

@@ -67,7 +67,7 @@ export const userLogin = async (req, res) => {
     })
 
     if (value === null) {
-        res.status(200).json({ response: "getting error", message: "Not a valid credentials" });
+        res.status(401).json({ response: "getting error", message: "Not a valid credentials" });
     } else {
         res.status(200).json({ response: "successfully login", data: value });
     }
